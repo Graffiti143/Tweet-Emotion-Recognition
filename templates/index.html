@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="english">
+    <head>
+        <title>Tweets Emotion</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+
+        <!--BootStrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'index.css') }}"/>
+        <link rel="icon" href="{{ url_for('static', filename = 'twitterbird.png') }}" type="image/x-icon">
+
+    </head>
+    <body>
+    <div>
+
+        <!--Title-->
+        <div class="jumbotron text-left tweetbg media">
+            <div style="padding-left: 40px;">
+                <div class="media-left">
+                    <img src= "{{ url_for('static', filename = 'twitterbird.png') }}"   alt="twitterbird"/>
+
+                </div>
+                <div class="media-body">
+                    <h1 style="color: white;padding-left: 20px;">Tweets Emotion Recognition</h1>
+                </div>
+            </div>
+             
+        </div>
+
+        <!--Body-->
+        <div class="container-fluid" style="background-color: white;" > <!--<div class="container-fluid">-->
+
+            <div class="row">
+                <div class="col-sm-6" > <!--style="background-color:yellow;"-->
+                    <div class="row text-center" style="margin-bottom:40px; padding-left: 11%;">
+
+                        <form class="form-inline" action = "/result" method = "post" > <!--autocomplete="on"-->
+                            
+                            <table>
+                                <tr>
+                                    <td style="text-align: center;">
+                                        <label for="query" class="itext" >Tweet Query</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control editbox" id="query" name="query">
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td style="text-align: center;">
+                                        <label for="count" class="itext">Count</label>
+                                    </td>
+                                    <td>
+                                        <input type="number" class="form-control editbox" id="count" name="count">
+                                    </td>
+                                </tr>
+        
+                            </table>
+                            <div class="text-right" style="padding-right: 22%;margin-top: 1em;">
+                                <button id="buto" type="submit" class="but btn btn-info btn-lg ">Generate</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+
+                    <div class="row text-center">
+
+                        <h1>Major Emotion Recognized</h1>
+                        <h3>{{me}}</h3>
+
+                    </div>
+                    
+                </div>
+
+                
+
+                <div class="col-sm-6" > <!--style="background-color:pink;"-->
+                    <div class="row text-center">
+                        <h1>Emotion analysis graph</h1>
+                        {% if op %}
+                            <img id="output" src="{{ url_for('static', filename = 'output.jpg') }}" alt="emotion graph"/>
+                        {% else %}
+                            <p><br></p>
+                        {% endif %}
+                        
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    
+    
+    </body>
+
+</html>

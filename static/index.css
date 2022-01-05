@@ -1,0 +1,67 @@
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(Arista_Trial.ttf);
+}
+
+@font-face {
+    font-family: mySecondFont;
+    src: url(Arista_Light_Trial.ttf);
+}
+.tweetbg{
+    background-color: rgba(29, 161, 242, 1);
+    
+}
+
+h1{
+    font-family: myFirstFont;
+}
+
+h3{
+    font-family: mySecondFont;
+}
+
+.itext{
+    font-family: mySecondFont;
+    font-size: 30px;
+    color: rgb(106, 109, 109);
+    text-align: center;
+}
+
+.editbox{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-color: rgba(29, 161, 242, 1);
+    border-style: double;
+    border-width: 5px;
+    padding-left: 100px;
+    margin-left: 20px;
+    
+}
+
+.but{
+    font-family: mySecondFont;
+    background-color:  rgba(29, 161, 242, 1);
+    color: white;
+    border-radius: 15%;
+    font-size: 21px;
+}
+
+table {
+    border-collapse:separate; 
+    border-spacing: 0 1em;
+}
+
+#output{
+    width: 600px;
+    height: 400px;
+}
+
+
+/*---------------- Loding CSS -------------------*/
+
+
+
+
+
+
+
